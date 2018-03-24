@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "ulink-line-bot",
+    "instances": 2,
+    "exec_mode": "cluster",
+    "script": "./index.js",
+    "merge_logs": true,
+    "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS",
+    "env": {
+      "NODE_PATH": ".",
+      "NODE_ENV": "production",
+      "PORT": "3000"
+    }
+  }]
+}

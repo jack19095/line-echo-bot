@@ -1,0 +1,47 @@
+<% if ( typeof products === 'undefined' ) products = []; %>
+<% if ( typeof isTitle === 'undefined' ) isTitle = false; %>
+  <div class="inline fields">
+    <div class="two wide field">
+      <% if (isTitle) { %>
+        <label><%= title %></label>
+      <% } %>
+    </div>
+    <div class="field">
+      <select class="ui fluid search dropdown" name="productIds">
+        <% for (let item of products) { %>
+          <option value="<%= item.pdId %>">
+            <%= item.name %>
+          </option>
+          <% } %>
+      </select>
+    </div>
+    <div class="field">
+      <select class="ui fluid search dropdown" name="productAmounts">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+      </select>
+    </div>
+    <% if (isTitle) { %>
+    <div class="field">      
+      <div id="add<%= quality %>Product" class="ui button">
+        <i class="add icon"></i>
+      </div>
+    </div>
+    <% } else { %>
+      <div class="field">
+        <div id="remove<%= quality %>Product" class="ui button">
+          <i class="remove icon"></i>
+        </div>
+      </div>    
+    <% } %>
+  </div>
